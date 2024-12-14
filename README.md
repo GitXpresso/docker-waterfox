@@ -6,7 +6,7 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/gitxpresso/docker-waterfox/build-image.yml?logo=github&branch=master&style=for-the-badge)](https://github.com/gitxpresso/docker-waterfox/actions/workflows/build-image.yml)
 [![Donate to the Original Creator of jlesage/docker-firefox](https://img.shields.io/badge/Donate-PayPal-green.svg?style=for-the-badge)](https://paypal.me/JocelynLeSage)
 
-This project implements a Docker container for [Water](https://www.waterfox.net/).
+This project implements a Docker container for [Waterfox](https://www.waterfox.net/).
 
 The GUI of the application is accessed through a modern web browser (no
 installation or configuration needed on the client side) or via any VNC client.
