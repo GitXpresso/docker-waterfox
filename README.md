@@ -1,26 +1,12 @@
-# Docker container for Waterfox
-[![Release](https://img.shields.io/github/release/gitxpresso/docker-waterfox.svg?logo=github&style=for-the-badge)](https://github.com/gitxpresso/docker-waterfox/releases/latest)
-[![Docker Image Size](https://img.shields.io/docker/image-size/ktamashidocker/waterfox/latest?logo=docker&style=for-the-badge)](https://hub.docker.com/r/ktamashidocker/waterfox/tags)
-[![Docker Pulls](https://img.shields.io/docker/pulls/ktamashidocker/waterfox?label=Pulls&logo=docker&style=for-the-badge)](https://hub.docker.com/r/jlesage/firefox)
-[![Docker Stars](https://img.shields.io/docker/stars/ktamashidocker/waterfox?label=Stars&logo=docker&style=for-the-badge)](https://hub.docker.com/r/ktamashidocker/waterfox)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/gitxpresso/docker-waterfox/build-image.yml?logo=github&branch=master&style=for-the-badge)](https://github.com/gitxpresso/docker-waterfox/actions/workflows/build-image.yml)
-[![Donate to the Original Creator of jlesage/docker-firefox](https://img.shields.io/badge/Donate-PayPal-green.svg?style=for-the-badge)](https://paypal.me/JocelynLeSage)
 
-This project implements a Docker container for [Waterfox](https://www.waterfox.net/).
+[![Waterfox logo](https://cdn.brandfetch.io/id_-XdGZcp/w/820/h/158/theme/dark/logo.png?c=1bfwsmEH20zzEfSNTed)](https://www.waterfox.net/waterfox/)
 
-The GUI of the application is accessed through a modern web browser (no
-installation or configuration needed on the client side) or via any VNC client.
-
----
-
-[![Waterfox logo]((https://www.waterfox.net/waterfox/)
-
-Waterfox is a popular open-source web browser that combines speed, privacy, and customization. With Waterfox, you can enjoy a fast and private browsing experience right out of the box. 
+[Waterfox](https://waterfox.net/) is a popular open-source web browser that combines speed, privacy, and customization. With Waterfox, you can enjoy a fast and private browsing experience right out of the box. 
 
 ---
 
 ## Table of Content
-
+   * [What is this project](#What-is-this-project)
    * [Quick Start](#quick-start)
    * [Usage](#usage)
       * [Environment Variables](#environment-variables)
@@ -51,6 +37,14 @@ Waterfox is a popular open-source web browser that combines speed, privacy, and 
    * [Troubleshooting](#troubleshooting)
       * [Crashes](#crashes)
    * [Support or Contact](#support-or-contact)
+## What is this project
+
+[![Donate to the Original Creator of jlesage/docker-firefox](https://img.shields.io/badge/Donate-PayPal-green.svg?style=for-the-badge)](https://paypal.me/JocelynLeSage)
+
+This project implements a Docker container for [Waterfox](https://www.waterfox.net/).
+
+The GUI of the application is accessed through a modern web browser (no
+installation or configuration needed on the client side) or via any VNC client.
 
 ## Quick Start
 
