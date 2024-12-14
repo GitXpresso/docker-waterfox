@@ -685,4 +685,5 @@ Having troubles with the container or have questions?  Please
 For other great Dockerized applications, see https://jlesage.github.io/docker-apps.
 
 [create a new issue]: https://github.com/jlesage/docker-firefox/issues
-[create a new issue about docker-waterfox]: https://github.com/gitxpresso/docker-waterfox/issues
+
+[create a new issue about docker waterfox]: https://github.com/gitxpresso/docker-waterfox/issues
