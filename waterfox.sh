@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+bold=$(tput bold)
+BWhite='\033[1;37m'       # White
+
 echo "Installing Waterfox on Debian Based Distros"
 echo "Updating All Packages"
 sudo apt update
@@ -14,5 +17,15 @@ echo 'deb http://download.opensuse.org/repositories/home:/hawkeye116477:/waterfo
 echo "Updating Packages to add the new repositories added when used curl and echo"
 sudo apt update
 echo "Installing Waterfox"
-echo "Do you want to install both waterfox and waterfox classic"
-sudo apt install waterfox -y
+read -p "Do you want to install both waterfox and waterfox classic (y/n) " yn
+
+case $yn in 
+	y ) echo  "${bold}Installing both waterfox and ${BWhite}waterfox classic";;
+	n ) echo "${bold}Only Installing Waterfox";;
+		exit;;
+  * ) sudo apt install waterfox waterfox-classic -y -y;
+  * ) sudo apt install install waterfox -y -n;
+		
+esac
+
+
