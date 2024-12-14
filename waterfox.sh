@@ -8,11 +8,11 @@ sudo apt upgrade
 echo -e "Installing Required Packages in order for waterfox to be installed"
 echo -e "install software-properties-common apt-transport-https curl"
 sudo apt install software-properties-common apt-transport-https curl -y
-echo "Adding GPG key and Apt repositories"
+echo "Importing GPG key and Apt repositories"
 curl -fsSL https://download.opensuse.org/repositories/home:hawkeye116477:waterfox/xUbuntu_22.04/Release.key | sudo gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_hawkeye116477_waterfox.gpg > /dev/null
-
 echo 'deb http://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:hawkeye116477:waterfox.list
 echo "Updating Packages to add the new repositories added when used curl and echo"
 sudo apt update
 echo "Installing Waterfox"
+echo "Do you want to install both waterfox and waterfox classic"
 sudo apt install waterfox -y
