@@ -13,10 +13,10 @@ RUN gcc -static -o membarrier_check membarrier_check.c
 RUN strip membarrier_check
 
 # Pull base image.
-FROM jlesage/baseimage-gui:alpine-3.20-v4.6.4
+FROM jlesage/baseimage-gui:ubuntu-24.04-v4.6.7
 
 # Docker image version is provided via build arg.
-ARG DOCKER_IMAGE_VERSION=
+ARG DOCKER_IMAGE_VERSION=1.0
 
 # Define software versions.
 ARG WATERFOX_VERSION=6.5.0
