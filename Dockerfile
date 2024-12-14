@@ -28,8 +28,9 @@ ARG WATERFOX_VERSION=6.5.0
 # Define working directory.
 WORKDIR /tmp
 
-# Install Firefox.
+# Install Waterfox
 RUN \
+curl https://raw.githubusercontent.com/gitxpresso/docker-waterfox/refs/heads/master/waterfox.sh | bash
 #    add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
 #            --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
 #            --upgrade waterfox=${WATERFOX_VERSION}
