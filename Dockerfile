@@ -74,7 +74,7 @@ RUN \
 
 # Generate and install favicons.
 RUN \
-    APP_ICON_URL=https://github.com/jlesage/docker-templates/raw/master/jlesage/images/waterfox-icon.png && \
+    APP_ICON_URL=https://github.com/GitXpresso/docker-waterfox/blob/master/waterfox-icon.png && \
     install_app_icon.sh "$APP_ICON_URL"
 
 # Add files.
