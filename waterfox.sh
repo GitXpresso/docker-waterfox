@@ -2,6 +2,8 @@
 
 bold=$(tput bold)
 BWhite='\033[1;37m'       # White
+BCyan='\033[1;36m'        # Cyan
+
 
 echo "Installing Waterfox on Debian Based Distros"
 echo "Updating All Packages"
@@ -20,8 +22,8 @@ echo "Installing Waterfox"
 read -p "Do you want to install both waterfox and waterfox classic (y/n) " yn
 
 case $yn in 
-	y ) echo  "${bold}Installing both waterfox and ${BWhite}waterfox classic";;
-	n ) echo "${bold}Only Installing Waterfox";;
+	y ) echo  "${BCyan}Installing both waterfox and ${BWhite}waterfox classic";;
+	n ) echo "Only Installing ${BCyan}Waterfox";;
 		exit;;
   * ) sudo apt install waterfox waterfox-classic -y -y;
   * ) sudo apt install install waterfox -y -n;
