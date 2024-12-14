@@ -15,8 +15,7 @@ installation or configuration needed on the client side) or via any VNC client.
 
 [![Waterfox logo]((https://www.waterfox.net/waterfox/)
 
-Mozilla Firefox is a free and open-source web browser developed by Mozilla
-Foundation and its subsidiary, Mozilla Corporation.
+Waterfox is a popular open-source web browser that combines speed, privacy, and customization. With Waterfox, you can enjoy a fast and private browsing experience right out of the box. 
 
 ---
 
