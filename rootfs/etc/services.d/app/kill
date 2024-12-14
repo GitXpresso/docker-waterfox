@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Firefox doesn't gracefully shutdown when receiving SIGTERM.  For example, last
+# Waterfox doesn't gracefully shutdown when receiving SIGTERM.  For example, last
 # opened tabs may not be saved.  Instead, terminate Firefox by sending the
 # CTRL+q key presses.
 #
@@ -14,7 +14,7 @@ xdotool key "ctrl+q"
 
 for i in $(seq 1 10)
 do
-    if ! ps | grep "/usr/lib/firefox/firefox" | grep -q -v grep
+    if ! ps | grep "/usr/lib/waterfox/waterfox" | grep -q -v grep
     then
         break
     fi
