@@ -1,6 +1,6 @@
 #
-# firefox Dockerfile
-#
+# Original Dockerfile
+# https://raw.githubusercontent.com/jlesage/docker-firefox/refs/heads/master/Dockerfile
 # https://github.com/jlesage/docker-firefox
 #
 
@@ -19,7 +19,7 @@ FROM jlesage/baseimage-gui:alpine-3.20-v4.6.4
 ARG DOCKER_IMAGE_VERSION=
 
 # Define software versions.
-ARG FIREFOX_VERSION=131.0.2-r0
+ARG WATERFOX_VERSION=6.5.0
 #ARG PROFILE_CLEANER_VERSION=2.36
 
 # Define software download URLs.
@@ -32,8 +32,8 @@ WORKDIR /tmp
 RUN \
 #    add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
 #            --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-#            --upgrade firefox=${FIREFOX_VERSION}
-     add-pkg firefox=${FIREFOX_VERSION}
+#            --upgrade waterfox=${WATERFOX_VERSION}
+     add-pkg waterfox=${WATERFOX_VERSION}
 
 # Install extra packages.
 RUN \
@@ -73,7 +73,7 @@ RUN \
 
 # Generate and install favicons.
 RUN \
-    APP_ICON_URL=https://github.com/jlesage/docker-templates/raw/master/jlesage/images/firefox-icon.png && \
+    APP_ICON_URL=https://github.com/jlesage/docker-templates/raw/master/jlesage/images/waterfox-icon.png && \
     install_app_icon.sh "$APP_ICON_URL"
 
 # Add files.
@@ -82,8 +82,8 @@ COPY --from=membarrier /tmp/membarrier_check /usr/bin/
 
 # Set internal environment variables.
 RUN \
-    set-cont-env APP_NAME "Firefox" && \
-    set-cont-env APP_VERSION "$FIREFOX_VERSION" && \
+    set-cont-env APP_NAME "Waterfox" && \
+    set-cont-env APP_VERSION "$WATERFOX_VERSION" && \
     set-cont-env DOCKER_IMAGE_VERSION "$DOCKER_IMAGE_VERSION" && \
     true
 
@@ -95,8 +95,8 @@ ENV \
 
 # Metadata.
 LABEL \
-      org.label-schema.name="firefox" \
-      org.label-schema.description="Docker container for Firefox" \
+      org.label-schema.name="waterfox" \
+      org.label-schema.description="Docker container for Water" \
       org.label-schema.version="${DOCKER_IMAGE_VERSION:-unknown}" \
-      org.label-schema.vcs-url="https://github.com/jlesage/docker-firefox" \
+      org.label-schema.vcs-url="https://github.com/gitxpresso/docker-waterfox" \
       org.label-schema.schema-version="1.0"
