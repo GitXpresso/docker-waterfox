@@ -62,15 +62,15 @@ Foundation and its subsidiary, Mozilla Corporation.
 Launch the Firefox docker container with the following command:
 ```shell
 docker run -d \
-    --name=firefox \
+    --name=waterfox \
     -p 5800:5800 \
-    -v /docker/appdata/firefox:/config:rw \
-    jlesage/firefox
+    -v /docker/appdata/waterfox:/config:rw \
+    ktamashidocker/waterfox
 ```
 
 Where:
 
-  - `/docker/appdata/firefox`: This is where the application stores its configuration, states, log and any files needing persistency.
+  - `/docker/appdata/waterfox`: This is where the application stores its configuration, states, log and any files needing persistency.
 
 Browse to `http://your-host-ip:5800` to access the Firefox GUI.
 
@@ -78,11 +78,11 @@ Browse to `http://your-host-ip:5800` to access the Firefox GUI.
 
 ```shell
 docker run [-d] \
-    --name=firefox \
+    --name=waterfox \
     [-e <VARIABLE_NAME>=<VALUE>]... \
     [-v <HOST_DIR>:<CONTAINER_DIR>[:PERMISSIONS]]... \
     [-p <HOST_PORT>:<CONTAINER_PORT>]... \
-    jlesage/firefox
+    ktamashidocker/waterfox
 ```
 
 | Parameter | Description |
@@ -234,12 +234,12 @@ ports are part of the example.
 ```yaml
 version: '3'
 services:
-  firefox:
-    image: jlesage/firefox
+  waterfox:
+    image: ktamashidocker/waterfox
     ports:
       - "5800:5800"
     volumes:
-      - "/docker/appdata/firefox:/config:rw"
+      - "/docker/appdata/waterfox:/config:rw"
 ```
 
 ## Docker Image Versioning
@@ -273,17 +273,22 @@ Finally, the Docker image can be manually updated with these steps:
 
   1. Fetch the latest image:
 ```shell
-docker pull jlesage/firefox
+docker pull ktamashidocker/waterfox
 ```
 
   2. Stop the container:
 ```shell
-docker stop firefox
+docker stop waterfox
+```
+  3. Start the container:
+```shell
+docker start waterfox
 ```
 
-  3. Remove the container:
+
+  4. Remove the container:
 ```shell
-docker rm firefox
+docker rm waterfox
 ```
 
   4. Create and start the container using the `docker run` command, with the
@@ -298,7 +303,7 @@ container image.
 
   1.  Open the *Docker* application.
   2.  Click on *Registry* in the left pane.
-  3.  In the search bar, type the name of the container (`jlesage/firefox`).
+  3.  In the search bar, type the name of the container (`ktamashidocker/waterfox`).
   4.  Select the image, click *Download* and then choose the `latest` tag.
   5.  Wait for the download to complete. A notification will appear once done.
   6.  Click on *Container* in the left pane.
@@ -509,7 +514,7 @@ map $http_upgrade $connection_upgrade {
 	''      close;
 }
 
-upstream docker-firefox {
+upstream docker-waterfox {
 	# If the reverse proxy server is not running on the same machine as the
 	# Docker container, use the IP of the Docker host here.
 	# Make sure to adjust the port according to how port 5800 of the
@@ -520,14 +525,14 @@ upstream docker-firefox {
 server {
 	[...]
 
-	server_name firefox.domain.tld;
+	server_name waterfox.domain.tld;
 
 	location / {
-	        proxy_pass http://docker-firefox;
+	        proxy_pass http://docker-waterfox;
 	}
 
 	location /websockify {
-		proxy_pass http://docker-firefox;
+		proxy_pass http://docker-waterfox;
 		proxy_http_version 1.1;
 		proxy_set_header Upgrade $http_upgrade;
 		proxy_set_header Connection $connection_upgrade;
@@ -544,7 +549,7 @@ route to different applications/containers.
 
 For example, let's say the reverse proxy server is running on the same machine
 as this container. The server would proxy all HTTP requests for
-`server.domain.tld/firefox` to the container at `127.0.0.1:5800`.
+`server.domain.tld/waterfox` to the container at `127.0.0.1:5800`.
 
 Here are the relevant configuration elements that would be added to the NGINX
 configuration:
@@ -555,7 +560,7 @@ map $http_upgrade $connection_upgrade {
 	''      close;
 }
 
-upstream docker-firefox {
+upstream docker-waterfox {
 	# If the reverse proxy server is not running on the same machine as the
 	# Docker container, use the IP of the Docker host here.
 	# Make sure to adjust the port according to how port 5800 of the
@@ -566,9 +571,9 @@ upstream docker-firefox {
 server {
 	[...]
 
-	location = /firefox {return 301 $scheme://$http_host/firefox/;}
+	location = /waterfox {return 301 $scheme://$http_host/waterfox/;}
 	location /firefox/ {
-		proxy_pass http://docker-firefox/;
+		proxy_pass http://docker-waterfox/;
 		# Uncomment the following line if your Nginx server runs on a port that
 		# differs from the one seen by external clients.
 		#port_in_redirect off;
@@ -680,3 +685,4 @@ Having troubles with the container or have questions?  Please
 For other great Dockerized applications, see https://jlesage.github.io/docker-apps.
 
 [create a new issue]: https://github.com/jlesage/docker-firefox/issues
+[create a new issue about docker-waterfox]: https://github.com/gitxpresso/docker-waterfox/issues
