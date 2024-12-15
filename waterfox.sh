@@ -24,7 +24,7 @@ read -p "Do you want to install both waterfox and waterfox classic (y/n) " yn
 case $yn in 
 	y ) echo  "${BCyan}Installing both waterfox and ${BWhite}waterfox classic";;
 	n ) echo "Only Installing ${BCyan}Waterfox";;
-		exit;;
+		
   * ) sudo apt install waterfox waterfox-classic -y -y;
   * ) sudo apt install install waterfox -y -n;
 		
