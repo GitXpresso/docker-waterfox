@@ -19,15 +19,29 @@ echo 'deb http://download.opensuse.org/repositories/home:/hawkeye116477:/waterfo
 echo "Updating Packages to add the new repositories added when used curl and echo"
 sudo apt update
 echo "Installing Waterfox"
+while true; do
 read -p "Do you want to install both waterfox and waterfox classic (y/n) " yn
 echo  "${BCyan}Installing both waterfox and ${BWhite}waterfox classic"
 echo "Only Installing ${BCyan}Waterfox";;
 echo "if you type c it will abort the installation"
 case $ync in 
-	y ) sudo apt install waterfox waterfox-classic -y
-        n ) sudo apt install waterfox -y
-        c ) exit;;	
-		
-esac
+	[Yy]* ) sudo apt install waterfox waterfox-classic -y
+        [Nn]* ) sudo apt install waterfox -y
+        [Cc]* ) exit;;	
+
+  
+    esac
+done 
+
+    read -p "Do you wish to install this program? " yn
+    case $yn in
+        [Yy]* ) make install; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+Another method, 
+
+
 
 
