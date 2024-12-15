@@ -21,8 +21,8 @@ sudo apt update
 echo "Installing Waterfox"
 while true; do
 read -p "Do you want to install both waterfox and waterfox classic ([y]es/[n]o/[c]ancel) " yn
-echo  "${BCyan}Installing both waterfox and ${BWhite}waterfox classic"
-echo "Only Installing ${BCyan}Waterfox"
+echo -e "${BCyan}Installing both waterfox and ${BWhite}waterfox classic"
+echo -e "Only Installing ${BCyan}Waterfox"
 echo "if you type c it will abort the installation"
 case $ync in 
 	[Yy]* ) sudo apt install waterfox waterfox-classic -y
