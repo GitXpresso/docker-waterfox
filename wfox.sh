@@ -19,7 +19,7 @@ case $ync in
 while true; do
 read -p "Do you want try again ([y]es/[n]o)" yn
 case $yn in 
-	[Yy]* ) curl https://raw.githubusercontent.com/gitxpresso/docker-waterfox/refs/heads/master/wfox.sh | bash  
+	[Yy]* ) curl https://raw.githubusercontent.com/gitxpresso/docker-waterfox/refs/heads/master/wfx.sh | bash  
         [Nn]*   echo Aborting
 	exit;;
 	
