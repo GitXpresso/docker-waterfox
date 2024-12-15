@@ -20,13 +20,13 @@ echo "Updating Packages to add the new repositories added when used curl and ech
 sudo apt update
 echo "Installing Waterfox"
 read -p "Do you want to install both waterfox and waterfox classic (y/n) " yn
-
-case $yn in 
-	y ) echo  "${BCyan}Installing both waterfox and ${BWhite}waterfox classic";;
-	n ) echo "Only Installing ${BCyan}Waterfox";;
-		
-  * ) sudo apt install waterfox waterfox-classic -y -y;
-  * ) sudo apt install install waterfox -y -n;
+echo  "${BCyan}Installing both waterfox and ${BWhite}waterfox classic"
+echo "Only Installing ${BCyan}Waterfox";;
+echo "if you type c it will abort the installation"
+case $ync in 
+	y ) sudo apt install waterfox waterfox-classic -y
+        n ) sudo apt install waterfox -y
+        c ) exit;;	
 		
 esac
 
