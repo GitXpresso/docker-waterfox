@@ -27,7 +27,10 @@ echo "if you type c it will abort the installation"
 case $ync in 
 	[Yy]* ) sudo apt install waterfox waterfox-classic -y
         [Nn]* ) sudo apt install waterfox -y
-        [Cc]* ) exit;;	
+        [Cc]* ) echo canceling the installation;
+	exit;;
+        * ) echo invalid response;
+	curl https://raw.githubusercontent.com/gitxpresso/docker-waterfox/refs/heads/master/wfox.sh | bash;;
 
   
     esac
